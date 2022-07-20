@@ -22,10 +22,10 @@ struct FrameworkGridView: View {
                             }
                     }
                 }
-                .navigationTitle("🍎 Frameworks")
-                .sheet(isPresented: $viewModel.isShowingDetailView) {
-                    FrameworkDetailView(isShowingDetailView: $viewModel.isShowingDetailView, framework: viewModel.selectedFramework ?? MockData.sampleFramework)
-                }
+            }
+            .navigationTitle("🍎 Frameworks")
+            .sheet(isPresented: $viewModel.isShowingDetailView) {
+                FrameworkDetailView(viewModel: FrameworkDetailViewModel(framework: viewModel.selectedFramework!, isShowingDetailView: $viewModel.isShowingDetailView))
             }
         }
     }
