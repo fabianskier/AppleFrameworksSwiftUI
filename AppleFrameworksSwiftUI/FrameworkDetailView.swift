@@ -9,33 +9,36 @@ import SwiftUI
 
 struct FrameworkDetailView: View {
     
-    @Binding var isShowingDetailView: Bool
-    @State private var isShowingSafariView = false
-    
-    var framework: Framework
+    @ObservedObject
+    var viewModel: FrameworkDetailViewModel
     
     var body: some View {
         VStack {
-            XDismissButton(isShowingDetailView: $isShowingDetailView)
+            XDismissButton(isShowingDetailView: $viewModel.isShowingDetailView.wrappedValue)
             
             Spacer()
             
-            FrameworkImageTitleView(framework: framework)
+            FrameworkImageTitleView(framework: viewModel.framework)
             
-            Text(framework.description)
+            Text(viewModel.framework.description)
                 .font(.body)
                 .padding()
             
             Spacer()
             
+            // Uncomment if you want to open Safari outside of your app
+            //            Link(destination: URL(string: viewModel.framework.urlString) ?? URL(string: "www.apple.com")!) {
+            //                AFButton(title: "Learn More")
+            //            }
+            
             Button {
-                isShowingSafariView = true
+                viewModel.isShowingSafariView = true
             } label: {
                 AFButton(title: "Learn More")
             }
         }
-        .fullScreenCover(isPresented: $isShowingSafariView, content: {
-            SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
+        .fullScreenCover(isPresented: $viewModel.isShowingSafariView, content: {
+            SafariView(url: URL(string: viewModel.framework.urlString) ?? URL(string: "www.apple.com")!)
         })
         
     }
@@ -43,6 +46,6 @@ struct FrameworkDetailView: View {
 
 struct FrameworkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FrameworkDetailView(isShowingDetailView: .constant(false), framework: MockData.sampleFramework)
+        FrameworkDetailView(viewModel: FrameworkDetailViewModel(framework: MockData.sampleFramework, isShowingDetailView: .constant(false)))
     }
 }

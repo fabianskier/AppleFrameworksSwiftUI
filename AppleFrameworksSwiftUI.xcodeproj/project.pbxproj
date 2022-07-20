@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		073582E32888B26C00082D2E /* FrameworkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073582E22888B26C00082D2E /* FrameworkDetailViewModel.swift */; };
 		07FEF8D32878BB8800B0335C /* AppleFrameworksSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEF8D22878BB8800B0335C /* AppleFrameworksSwiftUIApp.swift */; };
 		07FEF8D72878BB8900B0335C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FEF8D62878BB8900B0335C /* Assets.xcassets */; };
 		07FEF8DA2878BB8900B0335C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FEF8D92878BB8900B0335C /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073582E22888B26C00082D2E /* FrameworkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkDetailViewModel.swift; sourceTree = "<group>"; };
 		07FEF8CF2878BB8800B0335C /* AppleFrameworksSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleFrameworksSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FEF8D22878BB8800B0335C /* AppleFrameworksSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFrameworksSwiftUIApp.swift; sourceTree = "<group>"; };
 		07FEF8D62878BB8900B0335C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		07FEF8F3287A735D00B0335C /* FrameworkDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				073582E22888B26C00082D2E /* FrameworkDetailViewModel.swift */,
 				07FEF8E52878D91B00B0335C /* FrameworkDetailView.swift */,
 			);
 			name = FrameworkDetailView;
@@ -239,6 +242,7 @@
 				07FEF8EA2878E45600B0335C /* FrameworkGridViewModel.swift in Sources */,
 				07FEF8EE287A71C000B0335C /* FrameworkImageTitleView.swift in Sources */,
 				07FEF8EC287A654500B0335C /* SafariView.swift in Sources */,
+				073582E32888B26C00082D2E /* FrameworkDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
